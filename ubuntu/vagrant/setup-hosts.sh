@@ -19,5 +19,4 @@ cat >> /etc/hosts <<EOF
 192.168.56.3  worker-1
 192.168.56.4  worker-2
 EOF
-echo 'export PS1="${HOSTNAME} $"' >> /root/.bashrc
-
+echo 'export PS1="${cyan}\h ${red}$ ${clear_attributes}"' >> /home/vagrant/.bash_profile
