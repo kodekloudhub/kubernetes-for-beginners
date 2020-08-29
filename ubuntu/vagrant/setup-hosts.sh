@@ -15,9 +15,9 @@ sed -e '/^.*ubuntu-bionic.*/d' -i /etc/hosts
 
 # Update /etc/hosts about other hosts
 cat >> /etc/hosts <<EOF
-192.168.56.2  master
-192.168.56.3  worker-1
-192.168.56.4  worker-2
+192.168.56.51 kubemaster kubemaster.local
+192.168.56.52 kubenode01 kubenode01.local
+192.168.56.53 kubenode02 kubenode02.local
 EOF
 cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
