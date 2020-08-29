@@ -56,7 +56,7 @@ sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Do
 kubectl get pods --all-namespaces
 ```
 
-# join worker node to cluster
+# Join worker node to cluster
 execute this command in the workernodes of the kubernetes cluster so they would bootstrap to masternode
 ```
 kubeadm join 192.168.56.51:6443 --token 7kk6uh.n6ojcbz90f6rqgx5 \
@@ -74,7 +74,7 @@ kubenode02   Ready    <none>   9m8s   v1.18.6   192.168.56.53   <none>        Ub
 kubemaster $
 ```
 
-# Test your Kubernetes Cluster 
+# Test Kubernetes Cluster 
 if you have created a docker image, you can update in the image section of the deployment. Here, I am taking an example of using the application deploymnent using *nginx*
 
 *nginx.yml*
@@ -124,6 +124,9 @@ NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP        8h
 nginx        NodePort    10.111.249.242   <none>        80:31063/TCP   22m
 kubemaster $
+```
+
+```
 kubemaster $ kubectl get pods -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP            NODE         NOMINATED NODE   READINESS GATES
 nginx-585449566-jnqcg   1/1     Running   0          24m   192.168.1.9   kubenode01   <none>           <none>
